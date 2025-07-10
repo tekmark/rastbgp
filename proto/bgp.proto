@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package bgp;
+
+service BgpService {
+  rpc GetStatus(StatusRequest) returns (StatusResponse);
+}
+
+message StatusRequest {}
+
+message StatusResponse {
+  string state = 1;
+  uint32 peers = 2;
+}
